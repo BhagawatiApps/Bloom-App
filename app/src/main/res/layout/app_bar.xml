@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.appbar.AppBarLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/appBar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/_22sdp"
+        android:paddingEnd="@dimen/_22sdp"
+        android:paddingTop="@dimen/_18sdp"
+        android:paddingBottom="@dimen/_18sdp">
+
+        <TextView
+            android:id="@+id/tvGreeting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Good Morning,"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="@dimen/_12ssp"
+            android:textStyle="normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvUserName"
+            app:layout_constraintBottom_toBottomOf="@id/tvUserName" />
+
+        <TextView
+            android:id="@+id/tvUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:fontFamily="@font/fraunces"
+            android:text="Sofia"
+            android:textColor="?attr/colorOnSurface"
+            android:textSize="@dimen/_20ssp"
+            android:textStyle="bold|italic"
+            app:layout_constraintStart_toEndOf="@id/tvGreeting"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/iconContainer"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintHorizontal_chainStyle="packed" />
+
+        <FrameLayout
+            android:id="@+id/iconContainer"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:background="@drawable/bg_habit_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <ImageView
+                android:id="@+id/ivUserIcon"
+                android:layout_width="@dimen/_22sdp"
+                android:layout_height="@dimen/_22sdp"
+                android:layout_gravity="center"
+                android:contentDescription="Profile"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_user"
+                app:tint="?attr/colorPrimary" />
+
+        </FrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.appbar.AppBarLayout>

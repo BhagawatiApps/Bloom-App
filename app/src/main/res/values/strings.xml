@@ -1,5 +1,14 @@
 <resources>
     <string name="app_name">Bloom App</string>
+    <string name="onboarding_step1_title">Welcome to Bloom</string>
+    <string name="onboarding_step1_desc">A simple daily companion for managing\nPCOS — track your cycle, meals,\nmovement, water, relaxation and sleep.</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="suggested_habits">Suggested Habits</string>
+    <string name="tip_sleep_header">LOG LAST NIGHT\'S SLEEP</string>
+    <string name="tip_sleep_body">You haven\'t logged sleep yet. Consistent, close-to-8-hr nights can help keep your hormones more balanced — avoiding phones and screens before bed makes it easier to fall asleep.</string>
+    <string name="remind_me_later">Remind me later</string>
+    <string name="mark_as_done">&#10003;  Mark as done</string>
+
+    
 </resources>

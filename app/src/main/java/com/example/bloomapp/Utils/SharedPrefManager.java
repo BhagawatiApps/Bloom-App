@@ -19,6 +19,7 @@ public class SharedPrefManager {
     public static final String KEY_IS_LOGGED_IN = "is_logged_in";
     public static final String KEY_USER_TOKEN = "user_token";
     public static final String KEY_USER_ID = "user_id";
+    public static final String KEY_DAILY_TIP_COMPLETED_DATE = "daily_tip_completed_date";
 
     private SharedPrefManager(Context context) {
         sharedPreferences = context.getApplicationContext().getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
@@ -141,6 +142,15 @@ public class SharedPrefManager {
     public boolean isLoggedIn() {
         return getBoolean(KEY_IS_LOGGED_IN, false);
     }
+
+    public void setDailyTipCompletedDate(String date) {
+        setString(KEY_DAILY_TIP_COMPLETED_DATE, date);
+    }
+
+    public String getDailyTipCompletedDate() {
+        return getString(KEY_DAILY_TIP_COMPLETED_DATE, "");
+    }
+
 
     // =========================================================================
     // Preference Management Methods

@@ -1,4 +1,4 @@
-package com.example.bloomapp.OnBoarding;
+package com.example.bloomapp.Fragment;
 
 import android.os.Bundle;
 
@@ -12,10 +12,10 @@ import com.example.bloomapp.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link OnBoardingStep2#newInstance} factory method to
+ * Use the {@link fragment_Insights#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class OnBoardingStep2 extends Fragment {
+public class fragment_Insights extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +26,7 @@ public class OnBoardingStep2 extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public OnBoardingStep2() {
+    public fragment_Insights() {
         // Required empty public constructor
     }
 
@@ -36,11 +36,11 @@ public class OnBoardingStep2 extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment OnBoardingStep2.
+     * @return A new instance of fragment fragment_Insights.
      */
     // TODO: Rename and change types and number of parameters
-    public static OnBoardingStep2 newInstance(String param1, String param2) {
-        OnBoardingStep2 fragment = new OnBoardingStep2();
+    public static fragment_Insights newInstance(String param1, String param2) {
+        fragment_Insights fragment = new fragment_Insights();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -61,6 +61,6 @@ public class OnBoardingStep2 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_on_boarding_step2, container, false);
+        return inflater.inflate(R.layout.fragment__insights, container, false);
     }
 }

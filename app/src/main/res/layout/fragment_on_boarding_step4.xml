@@ -1,14 +1,284 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".OnBoarding.OnBoardingStep4">
+    tools:context=".OnBoarding.Fragment.OnBoardingStep4">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@+id/btnGetStarted"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-</FrameLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_26sdp"
+            android:layout_marginEnd="@dimen/_26sdp"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/_16sdp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/ic_clock" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:fontFamily="@font/fraunces"
+                android:text="When should we remind you?"
+                android:textAlignment="center"
+                android:textColor="@color/md_theme_onBackground"
+                android:textSize="@dimen/_22ssp"
+                android:textStyle="bold|italic" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:text="We'll send one daily nudge to log how you're doing."
+                android:textAlignment="center"
+                android:textColor="@color/md_theme_onPrimaryFixedVariant"
+                android:textSize="@dimen/_13ssp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:layout_marginBottom="@dimen/_16sdp"
+                android:text="Pick a time of day"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:textSize="@dimen/_13ssp"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/rgReminderTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cardMorning"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/bg_reminder_unselected"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:padding="@dimen/_16sdp">
+
+                    <RadioButton
+                        android:id="@+id/rbMorning"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/reminder_radio_tint"
+                        android:checked="false"
+                        android:clickable="false"
+                        android:focusable="false"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/rbMorning"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Morning"
+                            android:textColor="?attr/colorOnSurface"
+                            android:textSize="@dimen/_14ssp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="7:30 AM — start the day on track"
+                            android:textColor="?attr/colorOnSurfaceVariant"
+                            android:textSize="@dimen/_12ssp" />
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cardAfternoon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/bg_reminder_unselected"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:padding="@dimen/_16sdp">
+
+                    <RadioButton
+                        android:id="@+id/rbAfternoon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/reminder_radio_tint"
+                        android:checked="false"
+                        android:clickable="false"
+                        android:focusable="false"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/rbAfternoon"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Afternoon"
+                            android:textColor="?attr/colorOnSurface"
+                            android:textSize="@dimen/_14ssp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1:00 PM — a midday check-in"
+                            android:textColor="?attr/colorOnSurfaceVariant"
+                            android:textSize="@dimen/_12ssp" />
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cardEvening"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/bg_reminder_unselected"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:padding="@dimen/_16sdp">
+
+                    <RadioButton
+                        android:id="@+id/rbEvening"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/reminder_radio_tint"
+                        android:checked="false"
+                        android:clickable="false"
+                        android:focusable="false"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/rbEvening"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Evening"
+                            android:textColor="?attr/colorOnSurface"
+                            android:textSize="@dimen/_14ssp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="8:00 PM — wind down and reflect"
+                            android:textColor="?attr/colorOnSurfaceVariant"
+                            android:textSize="@dimen/_12ssp" />
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:layout_marginBottom="@dimen/_16sdp"
+                android:text="Or set a custom time"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:textSize="@dimen/_13ssp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etCustomTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_edit_text"
+                android:clickable="true"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:hint="08:00 AM"
+                android:inputType="time"
+                android:drawableEnd="@drawable/ic_input_clock"
+                android:padding="@dimen/_16sdp" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnGetStarted"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_49sdp"
+        android:layout_marginStart="@dimen/_26sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_26sdp"
+        android:text="Get started"
+        android:textColor="?attr/colorOnPrimary"
+        android:textSize="@dimen/_15ssp"
+        android:textStyle="bold"
+        app:backgroundTint="?attr/colorPrimary"
+        app:cornerRadius="@dimen/_16sdp"
+        app:layout_constraintBottom_toTopOf="@+id/tvSkipSetup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nestedScrollView" />
+
+    <TextView
+        android:id="@+id/tvSkipSetup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:layout_marginBottom="@dimen/_28sdp"
+        android:text="I'll set this up later"
+        android:textAlignment="center"
+        android:textColor="@color/md_theme_onPrimaryFixedVariant"
+        android:textSize="@dimen/_13ssp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnGetStarted" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
