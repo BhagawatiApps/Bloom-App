@@ -140,4 +140,26 @@
     <color name="md_theme_surfaceContainer_highContrast">#E5E2E1</color>
     <color name="md_theme_surfaceContainerHigh_highContrast">#D7D4D3</color>
     <color name="md_theme_surfaceContainerHighest_highContrast">#C9C6C5</color>
+
+    <!-- Habit Tracker Colors -->
+    <color name="habit_meal_primary">#8B4853</color>
+    <color name="habit_meal_track">#F3DCD8</color>
+
+    <color name="habit_movement_primary">#688F74</color>
+    <color name="habit_movement_track">#E2EBE4</color>
+
+    <color name="habit_water_primary">#427A9B</color>
+    <color name="habit_water_track">#DCEDF6</color>
+
+    <color name="habit_relaxation_primary">#8B73A0</color>
+    <color name="habit_relaxation_track">#EFE6F5</color>
+
+    <color name="habit_sleep_primary">#56547A</color>
+    <color name="habit_sleep_track">#E4E3EE</color>
+
+    <color name="habit_cycle_primary">#B36B83</color>
+    <color name="habit_cycle_track">#F9E8EE</color>
+
+    <color name="habit_symptom_primary">#996652</color>
+    <color name="habit_symptom_track">#F6EBE5</color>
 </resources>

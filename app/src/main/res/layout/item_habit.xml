@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingTop="@dimen/_10sdp"
+    android:background="@color/md_theme_background"
+    android:paddingBottom="@dimen/_10sdp">
+
+    <FrameLayout
+        android:id="@+id/iconContainer"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_gravity="top"
+        android:background="@drawable/bg_habit_icon">
+
+        <ImageView
+            android:id="@+id/ivHabitIcon"
+            android:layout_width="@dimen/_22sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:layout_gravity="center"
+            android:contentDescription="@null"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_meals" />
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvHabitTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/md_theme_onSurface"
+            android:textSize="@dimen/_13ssp"
+            android:textStyle="bold"
+            tools:text="Meals · 3 balanced meals" />
+
+        <TextView
+            android:id="@+id/tvHabitDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:textColor="@color/md_theme_onSurfaceVariant"
+            android:textSize="@dimen/_11ssp"
+            tools:text="Steadier blood sugar helps keep&#10;PCOS symptoms in check." />
+
+    </LinearLayout>
+
+    <com.google.android.material.materialswitch.MaterialSwitch
+        android:id="@+id/switchHabit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:checked="true"
+        app:thumbTint="@color/habit_switch_thumb"
+        app:trackTint="@color/habit_switch_track" />
+
+</LinearLayout>

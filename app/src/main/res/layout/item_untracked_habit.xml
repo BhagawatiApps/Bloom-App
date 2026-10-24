@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_8sdp"
+    android:layout_marginBottom="@dimen/_8sdp"
+    android:background="@drawable/bg_faq_card"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:padding="@dimen/_14sdp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground">
+
+    <!-- Icon Container -->
+    <FrameLayout
+        android:layout_width="@dimen/_44sdp"
+        android:layout_height="@dimen/_44sdp"
+        android:background="@drawable/bg_habit_icon">
+
+        <ImageView
+            android:id="@+id/ivUntrackedIcon"
+            android:layout_width="@dimen/_22sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:layout_gravity="center"
+            android:contentDescription="@null"
+            android:scaleType="fitCenter"
+            tools:src="@drawable/ic_cycle" />
+
+    </FrameLayout>
+
+    <!-- Texts -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvUntrackedTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/md_theme_onSurface"
+            android:textSize="@dimen/_14ssp"
+            android:textStyle="bold"
+            tools:text="Cycle" />
+
+        <TextView
+            android:id="@+id/tvUntrackedDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:textColor="@color/md_theme_onSurfaceVariant"
+            android:textSize="@dimen/_12ssp"
+            tools:text="Log your last period date" />
+
+    </LinearLayout>
+
+    <!-- Chevron Arrow -->
+    <ImageView
+        android:layout_width="@dimen/_18sdp"
+        android:layout_height="@dimen/_18sdp"
+        android:src="@drawable/ic_chevron_right"
+        android:contentDescription="@null"
+        app:tint="@color/md_theme_onSurfaceVariant" />
+
+</LinearLayout>

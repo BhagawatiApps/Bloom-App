@@ -13,11 +13,16 @@ import androidx.core.splashscreen.SplashScreen;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.bloomapp.MainActivity;
+import com.example.bloomapp.OnBoarding.OnBoardingScreen;
 import com.example.bloomapp.R;
 import com.example.bloomapp.Utils.SharedPrefManager;
+import com.example.bloomapp.ads.AdManager;
 
 @SuppressLint("CustomSplashScreen")
 public class SplashScreenActivity extends AppCompatActivity {
+
+    private boolean isNavigated = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,15 +38,35 @@ public class SplashScreenActivity extends AppCompatActivity {
         });
 
         new Handler(Looper.getMainLooper()).postDelayed(() -> {
-            SharedPrefManager prefManager = SharedPrefManager.getInstance(SplashScreenActivity.this);
-            Intent intent;
-            if (prefManager.isFirstTimeLaunch()) {
-                intent = new Intent(SplashScreenActivity.this, OnBoardingScreen.class);
-            } else {
-                intent = new Intent(SplashScreenActivity.this, MainActivity.class);
+            if (isFinishing() || isDestroyed() || isNavigated) {
+                return;
             }
-            startActivity(intent);
-            finish();
+
+            SharedPrefManager prefManager = SharedPrefManager.getInstance(SplashScreenActivity.this);
+            if (prefManager.isFirstTimeLaunch()) {
+                navigateToOnboarding();
+            } else {
+                AdManager.getInstance(getApplicationContext()).showAppOpenAdIfEligible(
+                        SplashScreenActivity.this,
+                        this::navigateToMain
+                );
+            }
         }, 3000);
+    }
+
+    private void navigateToOnboarding() {
+        if (isNavigated) return;
+        isNavigated = true;
+        Intent intent = new Intent(SplashScreenActivity.this, OnBoardingScreen.class);
+        startActivity(intent);
+        finish();
+    }
+
+    private void navigateToMain() {
+        if (isNavigated) return;
+        isNavigated = true;
+        Intent intent = new Intent(SplashScreenActivity.this, MainActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

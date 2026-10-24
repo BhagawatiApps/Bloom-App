@@ -36,12 +36,20 @@ dependencies {
     implementation libs.appcompat
     implementation libs.constraintlayout
     implementation libs.material
+    implementation libs.navigation.fragment
+    implementation libs.navigation.ui
     testImplementation libs.junit
     androidTestImplementation libs.espresso.core
     androidTestImplementation libs.ext.junit
     implementation libs.sdp.android
     implementation libs.ssp.android
     implementation libs.core.splashscreen
+    implementation libs.glide
+    implementation libs.play.services.ads
+    implementation "androidx.lifecycle:lifecycle-process:2.8.7"
+    def roomVersion = "2.7.2"
 
-
+    implementation "androidx.room:room-runtime:$roomVersion"
+    annotationProcessor "androidx.room:room-compiler:$roomVersion"
+    implementation "androidx.viewpager2:viewpager2:1.1.0"
 }

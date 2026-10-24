@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/md_theme_background"
+    android:fillViewport="true"
+    tools:context=".Fragment.fragment_home">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/_16sdp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/md_theme_surfaceContainerLowest"
+            app:cardCornerRadius="@dimen/_24sdp"
+            app:cardElevation="0dp"
+            app:strokeWidth="0dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_20sdp">
+
+                <!-- Title: Today's Goals -->
+                <TextView
+                    android:id="@+id/tvGoalsTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/fraunces"
+                    android:text="Today's Goals"
+                    android:textColor="@color/md_theme_primary"
+                    android:textSize="@dimen/_20ssp"
+                    android:textStyle="bold|italic"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!-- Subtitle: Saturday, June 27 -->
+                <TextView
+                    android:id="@+id/tvGoalsDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:text="Saturday, June 27"
+                    android:textColor="@color/md_theme_onSurfaceVariant"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvGoalsTitle" />
+
+                <!-- Message: Let's get blooming -->
+                <TextView
+                    android:id="@+id/tvGoalsMessage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:fontFamily="@font/fraunces"
+                    android:text="Let's get blooming"
+                    android:textColor="@color/md_theme_onSurface"
+                    android:textSize="@dimen/_15ssp"
+                    android:textStyle="italic"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvGoalsDate" />
+
+                <!-- Progress status: 0 of 5 complete -->
+                <TextView
+                    android:id="@+id/tvProgressStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:text="0 of 5 complete"
+                    android:textColor="@color/md_theme_onSurfaceVariant"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvGoalsMessage" />
+
+                <!-- Progress Bar -->
+                <com.google.android.material.progressindicator.LinearProgressIndicator
+                    android:id="@+id/progressGoals"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_6sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    android:max="5"
+                    android:progress="0"
+                    android:progressBackgroundTint="@color/md_theme_surfaceVariant"
+                    android:progressTint="@color/md_theme_primary"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/flowerContainer"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvProgressStatus" />
+
+                <!-- Right side: Flower & "Start here" -->
+                <FrameLayout
+                    android:id="@+id/flowerContainer"
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="@dimen/_80sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:contentDescription="@null"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_bloom_flower" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/fraunces"
+                        android:gravity="center"
+                        android:text="Start here"
+                        android:textColor="@color/md_theme_primary"
+                        android:textSize="@dimen/_11ssp"
+                        android:textStyle="bold|italic" />
+
+                </FrameLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20ssp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:fontFamily="@font/fraunces"
+            android:text="PCOS FAQ"
+            android:textColor="@color/md_theme_onSurface"
+            android:textSize="@dimen/_17ssp"
+            android:textStyle="italic" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/faqViewPager"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_76sdp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:overScrollMode="never" />
+
+        <LinearLayout
+            android:id="@+id/faqIndicators"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:gravity="center"
+            android:orientation="horizontal" />
+
+
+        <LinearLayout
+            android:id="@+id/untrackedHabitsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_22sdp"
+            android:orientation="vertical" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20ssp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:fontFamily="@font/fraunces"
+            android:text="Goal Progress"
+            android:textColor="@color/md_theme_onSurface"
+            android:textSize="@dimen/_17ssp"
+            android:textStyle="italic" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvDailyProgressList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"
+            tools:listitem="@layout/item_d_progress" />
+
+        <TextView
+            android:id="@+id/tvTodaysTipLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20ssp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:fontFamily="@font/fraunces"
+            android:text="Today's tip"
+            android:textColor="@color/md_theme_onSurface"
+            android:textSize="@dimen/_17ssp"
+            android:textStyle="italic" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardTodaysTip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_16sdp"
+            app:cardBackgroundColor="#F5EFE6"
+            app:cardCornerRadius="@dimen/_24sdp"
+            app:cardElevation="0dp"
+            app:strokeWidth="0dp">
+
+            <LinearLayout
+                android:id="@+id/llDailyTips"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/md_theme_surfaceContainerLowest"
+                android:orientation="vertical"
+                android:padding="@dimen/_16sdp">
+
+                <!-- Top Row: Icon + Header & Description -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/md_theme_surfaceContainerLowest"
+                    android:orientation="horizontal">
+
+                    <!-- Icon Container -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        app:cardBackgroundColor="@color/habit_sleep_track"
+                        app:cardCornerRadius="@dimen/_12sdp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="0dp">
+
+                        <ImageView
+                            android:id="@+id/ivTipIcon"
+                            android:layout_width="@dimen/_20sdp"
+                            android:layout_height="@dimen/_20sdp"
+                            android:layout_gravity="center"
+                            android:contentDescription="@null"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/ic_sleep"
+                            app:tint="@color/habit_sleep_primary" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Title & Body Text -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvTipHeader"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/tip_sleep_header"
+                            android:textColor="@color/habit_symptom_primary"
+                            android:textSize="@dimen/_11ssp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvTipBody"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_4sdp"
+                            android:lineSpacingExtra="2dp"
+                            android:text="@string/tip_sleep_body"
+                            android:textColor="@color/md_theme_onSurface"
+                            android:textSize="@dimen/_12ssp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- Action Buttons Row -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="@dimen/_14sdp"
+                    android:orientation="horizontal">
+
+                    <!-- Remind me later button -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnRemindLater"
+                        style="@style/Widget.Material3.Button.UnelevatedButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:backgroundTint="@color/md_theme_surfaceVariant"
+                        android:paddingStart="@dimen/_16sdp"
+                        android:paddingEnd="@dimen/_16sdp"
+                        android:text="@string/remind_me_later"
+                        android:textAllCaps="false"
+                        android:textColor="@color/md_theme_onSurface"
+                        android:textSize="@dimen/_12ssp"
+                        android:textStyle="bold"
+                        app:cornerRadius="@dimen/_20sdp"
+                        app:elevation="0dp" />
+
+                    <!-- Mark as done button -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnMarkDone"
+                        style="@style/Widget.Material3.Button.UnelevatedButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/habit_movement_primary"
+                        android:paddingStart="@dimen/_16sdp"
+                        android:paddingEnd="@dimen/_16sdp"
+                        android:text="@string/mark_as_done"
+                        android:textAllCaps="false"
+                        android:textColor="@color/md_theme_onSecondary"
+                        android:textSize="@dimen/_12ssp"
+                        android:textStyle="bold"
+                        app:cornerRadius="@dimen/_20sdp"
+                        app:elevation="0dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
